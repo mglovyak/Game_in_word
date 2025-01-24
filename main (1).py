@@ -10,7 +10,7 @@ def recognize_speech_from_mic(language="en-EN"):
         audio = recog.listen(mic)
 
     try:
-        return recog.recognize_google(audio, language=language).strip().lower()
+        return recog.recognize_google(audio, language=language)
     except (sr.UnknownValueError, sr.RequestError):
         return None
 
@@ -45,5 +45,5 @@ def play_game(level):
 
     print(f"Игра окончена. Ваш счет: {score}/{attempts}")
 
-level = input("Выберите уровень сложности (easy, medium, hard): ").strip().lower()
+level = input("Выберите уровень сложности (easy, medium, hard): ")
 play_game(level)
